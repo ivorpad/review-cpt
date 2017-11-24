@@ -10,7 +10,7 @@
  * Plugin Name:       ThemeForest Proofing CPT
  * Plugin URI:        themeforest.net
  * Description:       ThemeForest Proofing Page custom plugin.
- * Version:           0.1.2
+ * Version:           0.1.3
  * Author:            Ivor Padilla
  * Author URI:        ivorpad.com
  * License:           GPL-2.0+
@@ -60,7 +60,6 @@ function proofing_post_type() {
     'description'           => __( 'ThemeForest Snippets', 'envato' ),
     'labels'                => $labels,
     'supports'              => array( 'title', 'editor', 'author', 'revisions', 'page-attributes', ),
-    'taxonomies'            => array( 'category', ' post_tag' ),
     'hierarchical'          => false,
     'public'                => true,
     'show_ui'               => true,
@@ -88,9 +87,10 @@ function tf_review_snippets_taxonomy() {
         'themeforest_snippets',
         array(  
             'hierarchical' => true,  
-            'label' => 'Category',
+            'label' => 'Categories',
             'query_var' => true,
             'show_in_rest' => true,
+            'show_admin_column' => true,
             'rewrite' => array(
                 'slug' => 'themes',
                 'with_front' => false
